@@ -1,0 +1,311 @@
+*{
+    font-family: 'Vollkorn', serif;
+    padding: 10px;
+}
+
+:root{
+    --main-white: #f0f0f0;
+    --font-visited: rgb(167, 0, 167);
+    --main-gray: #242424;
+    --main-brown: #47200b;
+}
+
+body{
+    background: rgb(174,185,238);
+    background: linear-gradient(250deg, rgba(174,185,238,1) 0%, rgba(250,214,184,1) 100%);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+body h3{
+    font-size: 40px;
+}
+
+p, li{
+    font-size: 20px;
+}
+
+.nav{
+    width: 35wh;
+    height: auto;
+    border-radius: 15px;
+    opacity: 60%;
+    background-color: var(--main-white);
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: block;
+    z-index: 5;
+    margin-bottom: auto;
+}
+
+/* Hide nav bar while scrolling down */
+.scroll{
+    position: fixed;
+    top: -100px; 
+    right: 10px;
+    width: 100%;
+    height: 100px; 
+    z-index: 1;
+    transition: 0.3s ease-out;
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-gray);
+}
+
+/* Header design */
+header h1 {
+    color: var(--main-brown);
+    font-weight: bolder;
+    font-size: 100px;
+}
+
+header, main{
+    text-align: center;
+    text-wrap: wrap;
+    animation: moveDown 0.8s forwards;
+}
+
+main{
+    margin-bottom: 300px;
+}
+
+li{
+    list-style-type: none;
+}
+
+a {
+    color: var(--main-gray);
+    text-decoration: none;
+}
+
+a:hover {
+    font-size: x-large;
+    text-decoration: none;
+}
+
+a:visited {
+    color:var(--font-visited);
+    text-decoration: none;
+}
+
+/* Set the size of the programming languages icon*/
+.languages img {
+    width: 100px;
+    height: 100px;
+}
+
+.languages{
+    padding: 100px;
+    animation: moveDown2 0.8s ease-out forwards;
+}
+
+/* Style portfolio container and cards */
+.portfolio-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: top;
+    transform: translateY(20%);
+    animation: moveDown3 0.8s ease-out forwards;
+    z-index: 1;
+}
+
+.portfolio-item{
+    width: 30%;
+    height: auto;
+    overflow: hidden;
+    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    background-color: var(--main-white);
+    opacity: 70%;
+    border-radius: 15px;
+}
+
+.portfolio-item img{
+    width: 80%;
+    height: auto;
+    text-align: center;
+    z-index: 1;
+}
+
+.portfolio-item:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.portfolio-item > span {
+    background-color: lightgrey;
+    border-radius: 15px;
+    width: fit-content;
+}
+
+/* Animations for each div */
+@keyframes moveDown {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(100px);
+    }
+  }
+
+  @keyframes moveDown2 {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(10px);
+    }
+  }
+
+  @keyframes moveDown3 {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(20px);
+    }
+  }
+
+/* Position the playlist sidebar*/
+
+aside{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    background-color: var(--main-brown);
+    color: var(--main-white);
+    opacity: 60%;
+    width: 20rem;
+    height: auto;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+}
+
+footer img{
+    width: 5rem;
+    height: auto;
+}
+
+.returntotopbtn{
+display: none;
+   position: fixed;
+   bottom: 0;
+   right: 20px;
+   z-index: 99;
+   padding: 15px; 
+   border-radius: 50%;
+}
+
+button{
+    border: none;
+    background-color: transparent;
+}
+
+#returntotopbtn{
+    font-size: 50px;
+    position: fixed;
+    bottom: 10px;
+    right: 50px;
+    color: var(--main-brown);
+    opacity: 0.9;
+}
+
+.resume-list li {
+    list-style-type: square;
+}
+/* Responsiveness */
+
+/* Medium Screen Display */
+@media all and (max-width: 1460px) {
+    aside{
+        position: unset;
+        margin-top: 0;
+        margin-bottom: 15%;
+        margin-left: 45%;
+    }
+}
+
+/* Tablet Display */
+@media all and (max-width: 768px) {
+
+    .body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .portfolio-item{
+        width: 80vw; 
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    aside{
+        position: unset;
+        width: 50%;
+    }
+
+    footer{
+        display: flex;
+        flex-direction: row;
+        position: unset;
+        left: auto;
+        margin-top: 10%;
+    }
+
+}
+
+/* Mobile Display */
+@media all and (max-width: 480px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .portfolio-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .portfolio-item{
+        width: 80vw; 
+        height: auto;
+    }
+
+    aside{
+        position: unset;
+        width: 100vw;
+    }
+
+    footer{
+        display: flex;
+        flex-direction: row;
+        position: unset;
+        left: auto;
+    }
+
+}
